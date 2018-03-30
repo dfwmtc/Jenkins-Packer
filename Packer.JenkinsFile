@@ -1,0 +1,17 @@
+pipeline {
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                sh 'echo Starting at `date`'
+            }
+        }
+        stage('Create Packer AMI') {
+            steps {
+                sh 'wget https://releases.hashicorp.com/packer/1.2.2/packer_1.2.2_linux_amd64.zip'
+                sh 'unzip -o packer_1.2.2_linux_amd64.zip'
+                sh './packer build packer_builder/packer.json'
+            }
+        }
+    }
+}
