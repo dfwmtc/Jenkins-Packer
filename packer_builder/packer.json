@@ -23,7 +23,7 @@
         "sudo yum update -y",
         "sudo pip install ansible",
         "sudo chkconfig httpd on",
-        "sudo sh -c 'echo "hello" >>/var/www/html/index.html'"
+        "sudo sh -c 'echo \"hello\" >>/var/www/html/index.html'"
   ]
     }
     ]
