@@ -10,6 +10,7 @@ pipeline {
             steps {
                 sh 'wget https://releases.hashicorp.com/packer/1.2.2/packer_1.2.2_linux_amd64.zip'
                 sh 'unzip -o packer_1.2.2_linux_amd64.zip'
+                sh 'PACKER_LOG=1'
                 sh './packer build packer_builder/packer.json'
             }
         }
