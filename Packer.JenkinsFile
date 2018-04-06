@@ -1,7 +1,7 @@
 pipeline {
     agent any
     stages {
-        stage('Build') {
+       stage('Build') {
             steps {
                 sh 'echo Starting at `date`'
             }
@@ -12,6 +12,11 @@ pipeline {
                 sh 'unzip -o packer_1.2.2_linux_amd64.zip'
                 sh 'PACKER_LOG=1'
                 sh './packer build packer_builder/packer.json'
+            }
+        }
+        stage('AMI Build SuccessFull!') {
+            steps {
+                sh 'echo Packer build done at `date` '
             }
         }
     }
