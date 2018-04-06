@@ -1,7 +1,7 @@
 {
   "variables": {
     "ami_id": "ami-97785bed",
-    "app_name": "iacc2018-ami"
+    "app_name": "testbuild-ami"
   },
   "builders": [{
     "type": "amazon-ebs",
@@ -9,7 +9,7 @@
     "source_ami": "{{user `ami_id`}}",
     "instance_type": "t2.micro",
     "ssh_username": "ec2-user",
-    "ami_name": "packer-Test-{{user `app_name` }}",
+    "ami_name": "packer-Test-{{user `app_name` }}-{isotime \"2006-01-02\"}}",
     "tags": {
         "Name": "packer-test-{{user `app_name` }}",
         "Env": "Test"
